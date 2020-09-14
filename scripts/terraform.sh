@@ -1,15 +1,39 @@
 #!/bin/bash
 
-alias lo="gcloud auth login && gcloud auth application-default login"
+lo() {
+  gcloud auth login
+  gcloud auth application-default login
+}
 
-alias p="clear && terraform fmt -recursive && terraform init && (find . -name '*.sh' -type f -exec chmod +x {} \;) && (terraform plan | tee x && echo '\n' && printf '%0.s-' {1..73} && echo '\n' && (grep -E '^\e\[1m  # [^(]+' x | sort) && rm x)"
+p() {
+  clear
+  terraform fmt -recursive
+  terraform init
+  sh -c "find . -name '*.sh' -type f -exec chmod +x {} \;"
+  terraform plan | tee x
+  printf '\n'
+  printf '%0.s-' {1..73}
+  printf '\n'
+  grep -E '^\e\[1m  # [^(]+' x | sort
+  rm x
+}
 
-alias a="terraform apply -auto-approve"
+a() {
+  terraform apply -auto-approve
+}
 
-alias d="terraform destroy -auto-approve"
+d() {
+  terraform destroy -auto-approve
+}
 
-alias o="terraform output"
+o() {
+  terraform output
+}
 
-alias f="terraform fmt -recursive"
+f() {
+  terraform fmt -recursive
+}
 
-alias c="find . \( -name '.terraform' -o -name 'terraform.tfstate.d' \) -type d -prune -exec rm -rf {} \;"
+c() {
+  sh -c "find . \( -name '.terraform' -o -name 'terraform.tfstate.d' \) -type d -prune -exec rm -rf {} \;"
+}
