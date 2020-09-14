@@ -25,11 +25,11 @@ A compilation of commonly used commands related to Terraform and GCP.
 
 | Command     | Description |
 | ----------- | ----------- |
-| `delete_project [PROJECT_ID]` | Deletes the project regardless of the existence of lien.<br/><br/>Example:<br/>`delete_project my-project-1234` |
-| `gsutil_rsync [SOURCE] [DESTINATION]` | Performs a "dry-run" sync either between 2 buckets, dir to bucket or bucket to dir. Prompts for user confirmation before applying the changes. Files in the destination will be deleted if they don't exist in the source.<br/><br/>Example:<br/>`gsutil_rsync gs://bucket-1234 gs://bucket-5678`<br/>`gsutil_rsync /path/to/dir gs://bucket-5678`<br/>`gsutil_rsync gs://bucket-1234 /path/to/dir`|
+| `delete_project` | Deletes the project regardless of the existence of lien.<br/><br/>Usage:<br/>`delete_project [PROJECT_ID]`<br/><br/>Example:<br/>`delete_project my-project-1234`|
+| `gsutil_rsync` | Performs a "dry-run" sync either between 2 buckets, dir to bucket or bucket to dir. Prompts for user confirmation before applying the changes. Files in the destination will be deleted if they don't exist in the source.<br/><br/>Usage:<br/>`gsutil_rsync [SOURCE] [DESTINATION]`<br/><br/>Example:<br/>`gsutil_rsync gs://bucket-1234 gs://bucket-5678`<br/>`gsutil_rsync /path/to/dir gs://bucket-5678`<br/>`gsutil_rsync gs://bucket-1234 /path/to/dir`|
 
 ## Chromebook
 
 | Command     | Description |
 | ----------- | ----------- |
-| `chromebook_init` | Installing/Updating VSCode and Google SDK. |
+| `chromebook_init` | Installing/Updating VSCode and Google SDK.<br/><br/>Usage:<br/>`chromebook_init`<br/><br/>Example:<br/>`chromebook_init` |
