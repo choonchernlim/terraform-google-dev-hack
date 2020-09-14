@@ -24,3 +24,27 @@ delete_project() {
   tgdh_log "Deleting project..."
   gcloud projects delete "${project_id}" --quiet
 }
+
+gsutil_rsync() {
+  source="$1"
+  destination="$2"
+
+  if [[ -z "${source}" ]]; then
+    tgdh_log "ERROR: First argument must be a source path (dir path or gs://[BUCKET_NAME])."
+    exit 1
+  fi
+
+  if [[ -z "${destination}" ]]; then
+    tgdh_log "ERROR: Second argument must be a destination path (dir path or gs://[BUCKET_NAME])."
+    exit 1
+  fi
+
+  tgdh_log "Performing \"dry run\" rsync from ${source} to ${destination}..."
+  gsutil -m rsync -d -r -n "${source}" "${destination}"
+
+  tgdh_log "Do you really want to apply these changes? [ Press any key to continue ] [ CTRL+C to quit ]"
+  sh -c "read -n 1 -r"
+
+  tgdh_log "Rsync'ing from ${source} to ${destination}..."
+  gsutil -m rsync -d -r "${source}" "${destination}"
+}
