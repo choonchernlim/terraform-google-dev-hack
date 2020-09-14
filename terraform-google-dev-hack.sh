@@ -10,3 +10,6 @@ source "${BASE_DIR}/scripts/terraform.sh"
 
 # shellcheck source=./scripts/gcp.sh
 source "${BASE_DIR}/scripts/gcp.sh"
+
+# shellcheck source=./scripts/chromebook.sh
+source "${BASE_DIR}/scripts/chromebook.sh"
