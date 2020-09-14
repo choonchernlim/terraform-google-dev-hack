@@ -8,7 +8,7 @@ A compilation of commonly used commands related to Terraform and GCP.
 - In your favorite shell's startup script, add the following lines:
 
 ```shell script
-export TERRAFORM_GOOGLE_DEV_HACK_HOME=[PATH/TO/REPO] # terraform-google-dev-hack.sh relies on this env 
+export TERRAFORM_GOOGLE_DEV_HACK_HOME=[PATH/TO/REPO] # Update this, no trailing slash 
 source "${TERRAFORM_GOOGLE_DEV_HACK_HOME}/terraform-google-dev-hack.sh"
 ```
 
