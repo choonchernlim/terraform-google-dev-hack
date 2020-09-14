@@ -5,7 +5,12 @@ A compilation of commonly used commands related to Terraform and GCP.
 # Getting Started
 
 - Clone this repo.
-- In your favorite shell's startup script, add this line: `source [PATH/TO/REPO]/terraform-google-dev-hack.sh`.
+- In your favorite shell's startup script, add the following lines:
+
+```shell script
+export TERRAFORM_GOOGLE_DEV_HACK_HOME=[PATH/TO/REPO] # terraform-google-dev-hack.sh relies on this env 
+source "${TERRAFORM_GOOGLE_DEV_HACK_HOME}/terraform-google-dev-hack.sh"
+```
 
 # Commands
 
