@@ -18,13 +18,13 @@ source "${TERRAFORM_GOOGLE_DEV_HACK_HOME}/terraform-google-dev-hack.sh"
 
 | Command     | Description |
 | ----------- | ----------- |
-| `lo`        | Runs both `gcloud auth login` and `gcloud auth application-default login`. |
-| `p`         | Recursively formats Terraform files. Initializes working directory by caching modules. Makes all shell scripts executable. Show generated plan (both detailed and summary). |
-| `a`         | Runs `terraform apply -auto-approve`. |
-| `d`         | Runs `terraform destroy -auto-approve`. |
-| `o`         | Runs `terraform output`. |
-| `f`         | Runs `terraform fmt -recursive`. |
-| `c`         | Recursively delete `.terraform/` and `terraform.tfstate.d/` directories. Useful if your hard drive is running out of space. |
+| `tflo`      | Runs both `gcloud auth login` and `gcloud auth application-default login`. |
+| `tfp`       | Recursively formats Terraform files. Initializes working directory by caching modules. Makes all shell scripts executable. Show generated plan (both detailed and summary). |
+| `tfa`       | Runs `terraform apply -auto-approve`. |
+| `tfd`       | Runs `terraform destroy -auto-approve`. |
+| `tfo`       | Runs `terraform output`. |
+| `tff`       | Runs `terraform fmt -recursive`. |
+| `tfc`       | Recursively delete `.terraform/` and `terraform.tfstate.d/` directories. Useful if your hard drive is running out of space. |
 
 ## GCP
 

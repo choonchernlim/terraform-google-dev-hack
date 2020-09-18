@@ -1,11 +1,11 @@
 #!/bin/bash
 
-lo() {
+tflo() {
   gcloud auth login
   gcloud auth application-default login
 }
 
-p() {
+tfp() {
   clear
   terraform fmt -recursive
   terraform init
@@ -18,22 +18,22 @@ p() {
   rm x
 }
 
-a() {
+tfa() {
   terraform apply -auto-approve
 }
 
-d() {
+tfd() {
   terraform destroy -auto-approve
 }
 
-o() {
+tfo() {
   terraform output
 }
 
-f() {
+tff() {
   terraform fmt -recursive
 }
 
-c() {
+tfc() {
   sh -c "find . \( -name '.terraform' -o -name 'terraform.tfstate.d' \) -type d -prune -exec rm -rf {} \;"
 }
