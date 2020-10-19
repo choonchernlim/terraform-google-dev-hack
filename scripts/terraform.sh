@@ -14,7 +14,7 @@ tfp() {
   printf '\n'
   printf '%0.s-' {1..73}
   printf '\n'
-  grep -E '^\e\[1m  # [^(]+' x | sort
+  grep -E '\[1m  # [^(]+' x | sort
   printf '\n\n'
   rm x
 }
